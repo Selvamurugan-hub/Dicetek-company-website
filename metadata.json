@@ -1,0 +1,8 @@
+{
+  "name": "Dicetek L.L.C",
+  "description": "Premium futuristic corporate website for Dicetek L.L.C, a professional IT solutions and computer support company.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

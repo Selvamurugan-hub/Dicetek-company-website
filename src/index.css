@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-blue: #1d4ed8; /* blue-700 / Royal Blue */
+  --color-brand-blue-glow: rgba(29, 78, 216, 0.3);
+  --color-brand-sky: #0ea5e9; /* sky-500 */
+  --color-brand-sky-glow: rgba(14, 165, 233, 0.3);
+  --color-brand-cyan: #06b6d4;
+  --color-brand-dark: #0f172a; /* slate-900 */
+
+  --color-background: #f8fafc; /* slate-50 */
+  --color-surface: rgba(255, 255, 255, 0.8);
+  --color-surface-border: rgba(15, 23, 42, 0.08); /* slight dark border */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-slate-600 antialiased overflow-x-hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-slate-900;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-surface backdrop-blur-xl border border-surface-border shadow-sm;
+  }
+  
+  .text-glow-blue {
+    text-shadow: 0 0 20px var(--color-brand-blue-glow);
+  }
+  
+  .text-glow-sky {
+    text-shadow: 0 0 20px var(--color-brand-sky-glow);
+  }
+
+  .bg-glow-blue {
+    box-shadow: 0 10px 40px var(--color-brand-blue-glow);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-sky;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
